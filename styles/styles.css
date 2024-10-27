@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    padding-bottom: 600px; /* APENAS PARA TESTAR SCROLL */
 }
 
 h1, h2, h3, p {
@@ -20,8 +21,18 @@ li {
 }
 
 a {
+    color: inherit;
     text-decoration: none;
 }
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+HEADER
+*/
 
 .header-bg {
     background-color: black;
@@ -31,6 +42,7 @@ a {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;   
+    box-sizing: border-box;
     align-items: center;
     margin: 0 auto;
     max-width: 1200px;
@@ -50,6 +62,8 @@ a {
     padding: 16px 0px;
     font-size: 18px;
     position: relative;
+    font-family: 'Poppins';
+    font-weight: 400;
 }
 
 .header-menu a::after {
@@ -98,5 +112,114 @@ a {
     .header {
         flex-direction: column;
         justify-content: center;
+    }
+}
+
+/*
+PARTE PRINCIPAL
+*/
+
+.main-bg {
+    background-color: #000000;
+    box-shadow: inset 0 -120px 0 #fff;
+}
+
+.introducao {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-sizing: border-box;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 0px 40px;
+    padding: 0px 20px;
+}
+
+.introducao img {
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.introducao-conteudo {
+    color: #fff;
+    align-self: end;
+    padding-bottom: 200px;
+}
+
+.introducao-conteudo h1 {
+    font-size: 64px;
+    line-height: 1.125;
+    padding-bottom: 32px;
+    font-family: 'Poppins';
+    font-weight: 600;
+}
+
+.introducao-conteudo p {
+    font-size: 24px;
+    line-height: 1.5;
+    padding-bottom: 20px;
+    color: #b2b2b2;
+    font-family: 'Roboto';
+    font-weight: 400;
+}
+
+.introducao-conteudo a {
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 1.33;
+    font-size: 18px;
+    padding: 16px 32px;
+    border-radius: 4px;
+    background: linear-gradient(#ffbf00, #f2a50c);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    color: #332200;
+    font-family: 'Poppins';
+    font-weight: 600;
+}   
+
+.introducao-conteudo a:hover {
+    background: linear-gradient(#ffb60d, #e59317);
+}
+
+.introducao span {
+    color: #FFBB00;
+}
+
+@media (max-width: 1200px) {
+    .introducao-conteudo h1 {
+        font-size: 48px;
+        padding-bottom: 18px;
+    }
+    .introducao-conteudo p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 800px) {
+    .main-bg {
+        box-shadow: inset 0 -60px 0 #fff;
+    }
+    .introducao {
+        padding-top: 20px;
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    .introducao-conteudo {
+        padding-bottom: 0px;
+    }
+    .introducao-conteudo h1 {
+        font-size: 32px;
+        padding-bottom: 16px;
+    }
+    .introducao-conteudo p {
+        font-size: 18px;
+    }
+    .introducao-conteudo a {
+        padding: 12px 16px;
+    }
+    .introducao img {
+        height: 300px;
+        width: 100%;
     }
 }
